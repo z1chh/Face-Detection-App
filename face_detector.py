@@ -6,14 +6,13 @@ trained_face_data = cv2.CascadeClassifier(
     "haarcascade_frontalface_default.xml")
 
 # Choose an image to use to detect faces from, and convert it to grayscale
-img = cv2.imread("images/faces2.jpg")
+img = cv2.imread("images/face1.jpg")
 grayscale_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # Detect faces
 face_coords = trained_face_data.detectMultiScale(grayscale_img)
 
 # Draw a rectangle around the face
-print(face_coords)
 for x1, y1, x2, y2 in face_coords:
     #cv2.rectangle({IMAGE}, (x1, y1), (x2, y2), BGR(), THICKNESS)
     cv2.rectangle(img, (x1, y1), (x1 + x2, y1 + y2), (0, 255, 0), 2)
