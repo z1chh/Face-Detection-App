@@ -6,7 +6,7 @@ trained_face_data = cv2.CascadeClassifier(
     "haarcascade_frontalface_default.xml")
 
 # Choose an image to use to detect faces from, and convert it to grayscale
-img = cv2.imread("images/face1.jpg")
+img = cv2.imread("images/faces1.jpg")
 grayscale_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # Detect faces
