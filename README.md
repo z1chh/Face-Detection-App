@@ -6,7 +6,7 @@
 
 The [face_finder.py](https://github.com/z1chh/Face-Detection-App/blob/master/face_finder.py) and [face_detector.py](https://github.com/z1chh/Face-Detection-App/blob/master/face_detector.py) use OpenCV's Haar Cascade algorithm (pretty rudimentory face detection algorithm), which uses Haar features (chained) that match a frontal face.
 
-The image goes through the classifier and a face is detected if it passes through all of the Haar cascades. This is done for every type, size and location in the image (to detect the faces). Whenever multiple squares are close together, they are grouped into a single face. This algorithm is pre-trained by OpenCV, [here](https://youtube.com/watch?v=hPCTwxF0qf4) is a visualization of the Haar cascade.
+The image goes through the classifier and a face is detected if it passes through all of the Haar cascades. This is done for every type, size and location in the image (to detect the faces). Whenever multiple squares are close together, they are grouped into a single face. This algorithm is pre-trained by OpenCV, [here](https://youtube.com/watch?v=hPCTwxF0qf4){:target="_blank"} is a visualization of the Haar cascade.
 
 ## Face Finder
 
