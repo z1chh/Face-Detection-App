@@ -18,6 +18,7 @@ for x1, y1, x2, y2 in face_coords:
     cv2.rectangle(img, (x1, y1), (x1 + x2, y1 + y2), (0, 255, 0), 2)
 
 # Display the images
+img = cv2.resize(img, (960, 540))
 cv2.imshow("Face Detector", img)
 cv2.waitKey()  # Wait for keyboard input before closing the image
 
