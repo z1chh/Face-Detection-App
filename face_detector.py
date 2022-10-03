@@ -11,6 +11,7 @@ import cv2
 use_camera = False
 source_to_use = cv2.VideoCapture(0)
 video_to_use = cv2.VideoCapture("videos/normal_clip.mp4")
+min_neighbors = 30
 
 # Load pre-trained data on frontal faces from OpenCV (Haar Cascade algorithm)
 trained_face_data = cv2.CascadeClassifier(
@@ -22,15 +23,17 @@ while True:
     successful_frame, frame = source_to_use.read() if use_camera else video_to_use.read()
 
     # Make sure that the frame was captured
-    if use_camera and not successful_frame:
-        print("Error: could not capture frame")
+    if not successful_frame:
+        if use_camera:
+            print("Error: could not capture frame")
         break
 
     # Convert the image to a grayscale
     grayscale_img = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     # Detect faces
-    face_coords = trained_face_data.detectMultiScale(grayscale_img)
+    face_coords = trained_face_data.detectMultiScale(
+        grayscale_img, minNeighbors=min_neighbors)
 
     # Draw a rectangle around each detected face
     for x, y, w, h in face_coords:

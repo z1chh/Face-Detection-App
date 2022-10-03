@@ -5,6 +5,7 @@ import cv2
 
 # Image to use
 image_to_use = "images/face1.jpg"
+min_neighbors = 6
 
 # Load pre-trained data on frontal faces from OpenCV (Haar Cascade algorithm)
 trained_face_data = cv2.CascadeClassifier(
@@ -15,7 +16,8 @@ img = cv2.imread(image_to_use)
 grayscale_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # Detect faces
-face_coords = trained_face_data.detectMultiScale(grayscale_img)
+face_coords = trained_face_data.detectMultiScale(
+    grayscale_img, minNeighbors=min_neighbors)
 
 # Draw a rectangle around each detected face
 for x, y, w, h in face_coords:
