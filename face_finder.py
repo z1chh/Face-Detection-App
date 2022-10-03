@@ -4,7 +4,7 @@ import cv2
 
 
 # Image to use
-image_to_use = "images/faces2.jpg"
+image_to_use = "images/face1.jpg"
 
 # Load pre-trained data on frontal faces from OpenCV (Haar Cascade algorithm)
 trained_face_data = cv2.CascadeClassifier(
