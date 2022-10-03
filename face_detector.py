@@ -8,9 +8,9 @@ import cv2
 #                  - set cv2.VideoCapture() to the right value (default camera is 0) (line 12)
 # To use a video : - set use_camera to False (line 11)
 #                  - set video_to_use to the right video filename (line 13)
-use_camera = True
+use_camera = False
 source_to_use = cv2.VideoCapture(0)
-video_to_use = "video/name.mp4"
+video_to_use = cv2.VideoCapture("videos/normal_clip.mp4")
 
 # Load pre-trained data on frontal faces from OpenCV (Haar Cascade algorithm)
 trained_face_data = cv2.CascadeClassifier(
@@ -22,7 +22,7 @@ while True:
     successful_frame, frame = source_to_use.read() if use_camera else video_to_use.read()
 
     # Make sure that the frame was captured
-    if not successful_frame:
+    if use_camera and not successful_frame:
         print("Error: could not capture frame")
         break
 
