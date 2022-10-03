@@ -1,7 +1,7 @@
 # Face-Detection-App
 
 <p align="center">
-  <img src="images/face_finder.jpg">
+  <img src="images/face_finder.JPG">
 </p>
 
 ## face_finder.py
