@@ -49,5 +49,9 @@ while True:
         print("Exiting program...")
         break
 
+# Release the camera if required
+if use_camera:
+    source_to_use.release()
+
 # Confirm program is up and running
 print("Program successfully exited...")
