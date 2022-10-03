@@ -1,5 +1,9 @@
 # Face-Detection-App
 
+<p align="center">
+  <img src="images/face_finder.jpg">
+</p>
+
 ## face_finder.py
 
 Program that detects faces in a given image (change at line 7: image_to_use). Faces that are detected have a green rectangle around them.
